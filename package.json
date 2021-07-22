@@ -21,7 +21,8 @@
   "homepage": "https://github.com/DeeshanSharma/linkzia#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.13.3"
+    "mongoose": "^5.13.3",
+    "nanoid": "^3.1.23"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
