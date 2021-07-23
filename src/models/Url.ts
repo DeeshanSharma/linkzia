@@ -16,6 +16,7 @@ interface URL {
 const UrlSchema = new mongoose.Schema<URL>({
   name: {
     type: String,
+    default: '',
   },
   longUrl: {
     type: String,
