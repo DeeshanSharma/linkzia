@@ -8,7 +8,7 @@ async function connectDB() {
     await mongoose.connect(process.env.MONGO_URL, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      useFindAndModify: true,
+      useFindAndModify: false,
     });
     console.log('⚡[DATABASE]: Database connected successfully');
   } catch (err) {
