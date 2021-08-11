@@ -11,6 +11,7 @@ interface URL {
   longUrl: string;
   shortUrl?: string;
   count?: number;
+  createdAt?: Date;
 }
 
 const UrlSchema = new mongoose.Schema<URL>({
@@ -30,6 +31,15 @@ const UrlSchema = new mongoose.Schema<URL>({
     type: Number,
     default: 0,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
+
+UrlSchema.index(
+  { createdAt: 1 },
+  { expireAfterSeconds: 604800, partialFilterExpression: { name: '' } }
+);
 
 export default mongoose.model<URL>('Url', UrlSchema);
